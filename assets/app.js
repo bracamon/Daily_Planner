@@ -6,9 +6,14 @@ $(document).ready(function () {
 
     times.forEach(time => {
         var timeCheck = window.localStorage.getItem(time);
-        console.log(timeCheck);
+
+        var currentHour = moment().hour()
+        console.log(currentHour)
+
         if(timeCheck === null) {
             window.localStorage.setItem(time, "");
+        } else if(timeCheck.length > 0){
+            $(`#${time}`).attr("value", window.localStorage.getItem(time))
         }
     });
 

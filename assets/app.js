@@ -1,23 +1,22 @@
 $(document).ready(function () {
     var currentTime = moment().format('MMMM Do YYYY, h:mm a');
     $("#currentDay").text(currentTime);
+    $("button").addClass("bg-white text-dark");
+    $("span").addClass("bg-white text-dark");
 
-    var times = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
+    var times = [9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 
     times.forEach(time => {
         var timeCheck = window.localStorage.getItem(time);
-
         var currentHour = moment().hour()
-        // console.log(currentHour)
-        console.log(time)
 
         if(currentHour > time){
-            $(`#${time}`).addClass("bg-danger text-light");
+            $(`#${time}`).addClass("bg-muted text-muted");
             $(`#${time}`).attr("disabled", true);
         } else if(currentHour === time) {
-            $(`#${time}`).addClass("bg-secondary text-light");
+            $(`#${time}`).addClass("bg-white text-dark font-weight-bold");
         } else {
-            $(`#${time}`).addClass("bg-success text-light");
+            $(`#${time}`).addClass("bg-secondary text-light");
         }
 
         if(timeCheck === null) {

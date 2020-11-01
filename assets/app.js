@@ -16,20 +16,22 @@ $(document).ready(function () {
             $(`#${time}`).attr("disabled", true);
         } else if(currentHour === time) {
             $(`#${time}`).addClass("bg-secondary text-light");
+        } else {
+            $(`#${time}`).addClass("bg-success text-light");
         }
 
         if(timeCheck === null) {
             window.localStorage.setItem(time, "");
         } else if(timeCheck.length > 0){
             $(`#${time}`).attr("value", window.localStorage.getItem(time))
-        } else {
-            $(`#${time}`).addClass("bg-success text-light");
-        }
+        } 
     });
 
     $("form").on("submit", function(event) {
         event.preventDefault()
-        console.log(event.target.querySelector("input").getAttribute("id"));
-        console.log(event.target.querySelector("input").value)
+        var time = event.target.querySelector("input").getAttribute("id");
+        var text = event.target.querySelector("input").value;
+
+        window.localStorage.setItem(time, text);
     });
 })

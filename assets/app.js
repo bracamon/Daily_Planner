@@ -16,7 +16,7 @@ $(document).ready(function () {
         } else if(currentHour === time) {
             $(`#${time}`).addClass("bg-white text-dark font-weight-bold");
         } else {
-            $(`#${time}`).addClass("bg-secondary text-light");
+            $(`#${time}`).addClass("bg-info text-light");
         }
 
         if(timeCheck === null) {

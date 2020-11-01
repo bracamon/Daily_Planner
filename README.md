@@ -43,7 +43,7 @@ THEN the saved events persist
 
 ## Deployed Appplication Link and Preview
 
-Link: 
+Link: https://bracamon.github.io/Daily_Planner/
 
 ![day planner demo](./images/Daily_Planner_Preview.png)
 
